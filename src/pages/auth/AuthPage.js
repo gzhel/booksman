@@ -16,11 +16,11 @@ const ConnectedAuthPage = () => {
     return (
         <div className={"auth-page"}>
             <header className={"auth-page__header"}>
-                <button className={"auth-page__language-button"}
+                <button className={"components__button--language-ru"}
                         onClick={() => console.log("Switch to Russian")}>
                     Русский
                 </button>
-                <button className={"auth-page__language-button"}
+                <button className={"components__button--language-en"}
                         onClick={() => console.log("Switch to English")}>
                     English
                 </button>
@@ -57,10 +57,10 @@ const ConnectedAuthPage = () => {
                     />
                 </div>
                 <div className={"auth-page__content--submit"}>
-                    <button className={"auth-page__submit--button"}
+                    <button className={"components__button--default"}
                             type={"button"}
                             onClick={() => console.log("Login clicked!")}>
-                        Login
+                        Sign in
                     </button>
                 </div>
             </section>

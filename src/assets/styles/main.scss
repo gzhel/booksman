@@ -6,5 +6,8 @@
 @import "theme/base";
 @import "theme/animations";
 
+// including components
+@import "components/buttons";
+
 // including pages
 @import "../../pages/auth/AuthPage";
