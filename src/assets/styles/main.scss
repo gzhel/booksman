@@ -1,0 +1,10 @@
+// including variables and mixins
+@import "theme/reset";
+@import "theme/mixins";
+@import "theme/flexbox";
+@import "theme/variables";
+@import "theme/base";
+@import "theme/animations";
+
+// including pages
+@import "../../pages/auth/AuthPage";
