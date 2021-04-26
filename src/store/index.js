@@ -1,8 +1,10 @@
 import {applyMiddleware, combineReducers, compose, createStore} from "redux";
 import createSagaMiddleware from "redux-saga";
-import {all} from "redux-saga/effects";
+import {all, fork} from "redux-saga/effects";
 import thunk from "redux-thunk";
 import {configReducer} from "../utils/config/store/reducer";
+import {authReducer} from "../pages/auth/store/reducer";
+import {authEffects} from "../pages/auth/store/effects";
 
 const composeEnhancers = typeof window === 'object' &&
         window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
@@ -10,12 +12,12 @@ const composeEnhancers = typeof window === 'object' &&
 
 const rootReducer = combineReducers({
     configReducer,
-    // ...
+    authReducer,
 });
 
 function* rootEffects() {
     yield all([
-        // fork(mainEffects);
+        fork(authEffects),
     ])
 }
 

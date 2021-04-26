@@ -1,19 +1,26 @@
-import React from "react";
+import React, {useState} from "react";
 import {connect} from "react-redux";
-
 import BooksmanLogo from "../../assets/images/booksman_logo.png";
+import {Redirect} from "react-router";
+import {authActions} from "./store/actions";
+import {authSelectors} from "./store/selectors";
 
 const mapStateToProps = (root) => ({
-
+    isAuthorized: authSelectors.isAuthorized(root),
 });
 
 const mapDispatchToProps = (dispatch) => ({
-
+    onAuthClicked: (authData) => dispatch(authActions.onAuthClicked(authData)),
 });
 
-const ConnectedAuthPage = () => {
+const ConnectedAuthPage = ({
+    isAuthorized,
+    onAuthClicked,
+}) => {
+    const [login, setLogin] = useState("");
+    const [password, setPassword] = useState("");
 
-    return (
+    return isAuthorized ? <Redirect to={"/profile"} /> : (
         <div className={"auth-page"}>
             <header className={"auth-page__header"}>
                 <button className={"components__button--language-ru"}
@@ -42,6 +49,7 @@ const ConnectedAuthPage = () => {
                            name={"user-login"}
                            id={"user-login"}
                            placeholder={"Type..."}
+                           onChange={(evt) => setLogin(evt.target.value)}
                     />
                 </div>
                 <div className={"auth-page__content--field"}>
@@ -54,12 +62,13 @@ const ConnectedAuthPage = () => {
                            name={"user-password"}
                            id={"user-password"}
                            placeholder={"Type..."}
+                           onChange={(evt) => setPassword(evt.target.value)}
                     />
                 </div>
                 <div className={"auth-page__content--submit"}>
                     <button className={"components__button--default"}
                             type={"button"}
-                            onClick={() => console.log("Login clicked!")}>
+                            onClick={() => onAuthClicked({login, password})}>
                         Sign in
                     </button>
                 </div>
@@ -70,7 +79,7 @@ const ConnectedAuthPage = () => {
                 </p>
             </footer>
         </div>
-    )
+    );
 };
 
 export const AuthPage = connect(mapStateToProps, mapDispatchToProps)(ConnectedAuthPage);
