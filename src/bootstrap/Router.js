@@ -9,6 +9,7 @@ const Router = () => {
         <BrowserRouter>
             <Switch>
                 <Route path={"/auth"} component={AuthPage}/>
+                {/*<LayoutRouter path={"/profile"} component={ProfilePage}/>*/}
             </Switch>
         </BrowserRouter>
     )
