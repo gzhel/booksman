@@ -10,6 +10,18 @@ export const authReducer = (state = authInitial, action) => {
             }
         }
 
+        case authActionTypes.ON_INPUT_CHANGED: {
+            console.log('action.payload', action.payload);
+            const {name, value} = action.payload.target;
+            console.log("name", name);
+            console.log("value", value);
+
+            return {
+                ...state,
+                [name] : value,
+            }
+        }
+
         default: {
             return state;
         }

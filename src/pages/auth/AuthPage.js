@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {connect} from "react-redux";
 import BooksmanLogo from "../../assets/images/booksman_logo.png";
 import {Redirect} from "react-router";
@@ -7,18 +7,22 @@ import {authSelectors} from "./store/selectors";
 
 const mapStateToProps = (root) => ({
     isAuthorized: authSelectors.isAuthorized(root),
+    login: authSelectors.login(root),
+    password: authSelectors.password(root),
 });
 
 const mapDispatchToProps = (dispatch) => ({
     onAuthClicked: (authData) => dispatch(authActions.onAuthClicked(authData)),
+    onInputChanged: (event) => dispatch(authActions.onInputChanged(event)),
 });
 
 const ConnectedAuthPage = ({
     isAuthorized,
     onAuthClicked,
+    onInputChanged,
+    login,
+    password,
 }) => {
-    const [login, setLogin] = useState("");
-    const [password, setPassword] = useState("");
 
     return isAuthorized ? <Redirect to={"/profile"} /> : (
         <div className={"auth-page"}>
@@ -41,28 +45,28 @@ const ConnectedAuthPage = ({
                 </div>
                 <div className={"auth-page__content--field"}>
                     <label className={"label"}
-                           htmlFor={"user-login"}>
+                           htmlFor={"login"}>
                         Login
                     </label>
                     <input className={"input"}
                            type={"email"}
-                           name={"user-login"}
-                           id={"user-login"}
+                           name={"login"}
+                           id={"login"}
                            placeholder={"Type..."}
-                           onChange={(evt) => setLogin(evt.target.value)}
+                           onChange={onInputChanged}
                     />
                 </div>
                 <div className={"auth-page__content--field"}>
                     <label className={"label"}
-                           htmlFor={"user-password"}>
+                           htmlFor={"password"}>
                         Password
                     </label>
                     <input className={"input"}
                            type={"password"}
-                           name={"user-password"}
-                           id={"user-password"}
+                           name={"password"}
+                           id={"password"}
                            placeholder={"Type..."}
-                           onChange={(evt) => setPassword(evt.target.value)}
+                           onChange={onInputChanged}
                     />
                 </div>
                 <div className={"auth-page__content--submit"}>

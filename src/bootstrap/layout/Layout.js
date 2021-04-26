@@ -8,22 +8,40 @@ const mapDispatchToProps = () => ({});
 
 const ConnectedLayout = ({children}) => {
     return (
-        <header className={"layout__header"}>
-            <div className={"layout__header--logo"}>
-                <img src={BooksmanLogo} alt={"Logo"} width={70} height={60}/>
-            </div>
-            <div className={"layout__header--menu"}>
-                <div className={"layout__header--language"}>
-
+        <div className={"layout"}>
+            <header className={"layout__header"}>
+                <div className={"layout__header--logo"}>
+                    <img src={BooksmanLogo} alt={"Logo"} width={70} height={30}/>
                 </div>
-                <div className={"layout__header--logout"}>
-
+                <div className={"layout__header--menu"}>
+                    <button className={"components__button--language-ru"}
+                            onClick={() => console.log("Switch to Russian")}>
+                        Русский
+                    </button>
+                    <button className={"components__button--language-en"}
+                            onClick={() => console.log("Switch to English")}>
+                        English
+                    </button>
+                    <button className={"components__button--reset"}
+                            type={"button"}
+                            onClick={() => console.log('logout')}>
+                        Logout
+                    </button>
                 </div>
-            </div>
+
+            </header>
             <nav className={"layout__sidebar"}>
-
+                <ul className={"layout__sidebar--menu"}>
+                    <li>Profile</li>
+                    <li>Market</li>
+                    <li>Orders</li>
+                    <li>Chat</li>
+                </ul>
             </nav>
-        </header>
+            <div className={"layout__page"}>
+                {children}
+            </div>
+        </div>
     )
 };
 

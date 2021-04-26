@@ -9,5 +9,8 @@
 // including components
 @import "components/buttons";
 
+// including layouts
+@import "../../bootstrap/layout/Layout";
+
 // including pages
 @import "../../pages/auth/AuthPage";

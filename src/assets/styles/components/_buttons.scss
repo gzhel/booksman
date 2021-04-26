@@ -15,6 +15,20 @@
     }
   }
 
+  &--reset {
+    color: $white;
+    padding: 8px 30px;
+    background-color: $black;
+    border: 2px solid $white;
+    border-radius: 20px;
+    font-weight: 600;
+
+    &:hover {
+      cursor: pointer;
+      background-color: lighten($black, 3);
+    }
+  }
+
   &--language-ru {
     color: $white;
     padding: 8px 30px;
