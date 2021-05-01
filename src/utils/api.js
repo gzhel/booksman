@@ -3,7 +3,7 @@ import store from "../store";
 import {configActions} from "./config/store/actions";
 
 export const publicApi = axios.create({
-    baseURL: "/api",
+    baseURL: "https://tokyoapi.azurewebsites.net/api",
 });
 
 export const staticApi = axios.create({

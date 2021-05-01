@@ -1,19 +1,22 @@
 import {all, takeEvery} from "redux-saga/effects";
 
 import {authActionTypes} from "./model";
+import {authApiService} from "../AuthPage.ApiService";
 
 export function* authEffects() {
     yield all([
         takeEvery(authActionTypes.ON_AUTH_CLICKED, onAuthClicked),
-        takeEvery(authActionTypes.ON_INPUT_CHANGED, onInputChanged),
     ]);
 }
 
 function* onAuthClicked(action) {
-    yield console.log("На апи идёт: ", action.payload)
-}
+    try {
+        const {login, password} = action.payload;
+        const authFields = {log: login, pass: password};
+        const userId = yield authApiService.signIn(authFields);
+        yield localStorage.setItem('booksmanUserId', userId.data);
 
-function* onInputChanged(action) {
-    const {name, value} = action.payload.target;
-    yield console.log("Name", name, "Value", value);
+    } catch (error) {
+        yield console.log("onAuthClicked error:", onAuthClicked);
+    }
 }
