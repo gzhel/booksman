@@ -5,6 +5,7 @@ import thunk from "redux-thunk";
 import {configReducer} from "../utils/config/store/reducer";
 import {authReducer} from "../pages/auth/store/reducer";
 import {authEffects} from "../pages/auth/store/effects";
+import {configEffects} from "../utils/config/store/effects";
 
 const composeEnhancers = typeof window === 'object' &&
         window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
 
 function* rootEffects() {
     yield all([
+        fork(configEffects),
         fork(authEffects),
     ])
 }

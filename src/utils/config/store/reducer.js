@@ -5,9 +5,19 @@ export const configReducer = (state = configStateInitial, action) => {
         case ConfigActionTypes.PRELOADER_PAGE_IS_SHOW: {
             return {
                 ...state,
-                isShow: action.payload,
+                isShowPreloader: action.payload,
             }
         }
+
+        case ConfigActionTypes.CHECK_AUTH: {
+            const isAuthorized = localStorage.getItem("booksmanUserId") !== null;
+
+            return {
+                ...state,
+                isAuthorized: isAuthorized,
+            }
+        }
+
         default: {
             return state;
         }

@@ -1,5 +1,4 @@
 export const authInitial = {
-    isAuthorized: false,
     login: "",
     password: ""
 };

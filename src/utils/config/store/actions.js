@@ -1,10 +1,16 @@
 import {ConfigActionTypes} from "./model";
 
-const ShowPreloaderAction = (isShow) => ({
-    payload: isShow,
+const ShowPreloaderAction = (isShowPreloader) => ({
+    payload: isShowPreloader,
     type: ConfigActionTypes.PRELOADER_PAGE_IS_SHOW,
+});
+
+const CheckAuthAction = () => ({
+    payload: null,
+    type: ConfigActionTypes.CHECK_AUTH,
 });
 
 export const configActions = {
     showPreloader: ShowPreloaderAction,
+    checkAuth: CheckAuthAction,
 };

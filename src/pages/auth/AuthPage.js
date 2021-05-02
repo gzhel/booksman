@@ -1,12 +1,14 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import BooksmanLogo from "../../assets/images/booksman_logo.png";
 import {Redirect} from "react-router";
 import {authActions} from "./store/actions";
 import {authSelectors} from "./store/selectors";
+import {configSelectors} from "../../utils/config/store/selectors";
+import {configActions} from "../../utils/config/store/actions";
 
 const mapStateToProps = (root) => ({
-    isAuthorized: authSelectors.isAuthorized(root),
+    isAuthorized: configSelectors.isAuthorized(root),
     login: authSelectors.login(root),
     password: authSelectors.password(root),
 });
@@ -14,6 +16,7 @@ const mapStateToProps = (root) => ({
 const mapDispatchToProps = (dispatch) => ({
     onAuthClicked: (authData) => dispatch(authActions.onAuthClicked(authData)),
     onInputChanged: (event) => dispatch(authActions.onInputChanged(event)),
+    checkAuth: () => dispatch(configActions.checkAuth()),
 });
 
 const ConnectedAuthPage = ({
@@ -22,7 +25,12 @@ const ConnectedAuthPage = ({
     onInputChanged,
     login,
     password,
+    checkAuth,
 }) => {
+
+    useEffect(() => {
+        checkAuth();
+    }, [isAuthorized]); // eslint-disable-line
 
     return isAuthorized ? <Redirect to={"/profile"} /> : (
         <div className={"auth-page"}>
