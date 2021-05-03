@@ -1,0 +1,41 @@
+@import "../../assets/styles/theme/variables";
+
+.page {
+  &__background {
+    width: 100%;
+    height: 100vh;
+    background-color: $bg-light;
+    padding-top: 60px;
+  }
+}
+
+.profile {
+  &__user {
+    display: flex;
+    flex-direction: row;
+
+    &--info {
+      margin-left: 60px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+  &__orders {
+    display: flex;
+    flex-direction: column;
+    &--title {
+      margin: 0 auto 20px auto;
+    }
+    &--list {
+      display: flex;
+      overflow-x: auto;
+      img {
+        margin: 20px;
+        &:hover {
+          cursor: pointer;
+          box-shadow: 1px 1px 10px black;
+        }
+      }
+    }
+  }
+}

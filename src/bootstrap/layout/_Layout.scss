@@ -2,12 +2,13 @@
 
 .layout {
   &__header {
+    position: fixed;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    padding: 0 20px;
     background-color: $layout-color;
     height: 60px;
+    width: 100%;
     border-bottom: 2px solid $primary-color;
 
     &--menu {
@@ -23,9 +24,12 @@
     justify-content: start;
     padding-top: 50px;
     width: 220px;
-    height: calc(100% - 60px);
+    height: 100%;
     background-color: $layout-color;
     border-right: 2px solid $primary-color;
+    &--logo {
+      margin: 0 auto 40px auto;
+    }
     &--menu {
       margin-left: 60px;
       li {

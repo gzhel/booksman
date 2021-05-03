@@ -10,9 +10,6 @@ const ConnectedLayout = ({children}) => {
     return (
         <div className={"layout"}>
             <header className={"layout__header"}>
-                <div className={"layout__header--logo"}>
-                    <img src={BooksmanLogo} alt={"Logo"} width={70} height={30}/>
-                </div>
                 <div className={"layout__header--menu"}>
                     <button className={"components__button--language-ru"}
                             onClick={() => console.log("Switch to Russian")}>
@@ -31,6 +28,9 @@ const ConnectedLayout = ({children}) => {
 
             </header>
             <nav className={"layout__sidebar"}>
+                <div className={"layout__sidebar--logo"}>
+                    <img src={BooksmanLogo} alt={"Logo"} width={98} height={111}/>
+                </div>
                 <ul className={"layout__sidebar--menu"}>
                     <li>Profile</li>
                     <li>Market</li>

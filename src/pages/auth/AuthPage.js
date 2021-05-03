@@ -48,13 +48,13 @@ const ConnectedAuthPage = ({
                 <div className={"auth-page__content--logo"}>
                     <img src={BooksmanLogo}
                          alt={"BooksmanLogo"}
-                         width={140}
-                         height={60}/>
+                         width={147}
+                         height={166}/>
                 </div>
                 <div className={"auth-page__content--field"}>
                     <label className={"label"}
                            htmlFor={"login"}>
-                        Login
+                        Login:
                     </label>
                     <input className={"input"}
                            type={"email"}
@@ -67,7 +67,7 @@ const ConnectedAuthPage = ({
                 <div className={"auth-page__content--field"}>
                     <label className={"label"}
                            htmlFor={"password"}>
-                        Password
+                        Password:
                     </label>
                     <input className={"input"}
                            type={"password"}
