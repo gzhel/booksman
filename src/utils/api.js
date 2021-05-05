@@ -11,6 +11,7 @@ export const staticApi = axios.create({
 });
 
 publicApi.interceptors.response.use(function (response) {
+    store.dispatch(configActions.showPreloader(false));
     return response;
 }, function (error) {
     const status = error.response.status;
@@ -20,9 +21,11 @@ publicApi.interceptors.response.use(function (response) {
     switch (status) {
         case 401 :
             console.log("401 details: ", errorDetails);
+            store.dispatch(configActions.showPreloader(false));
             break;
         case 500 :
             console.log("500 details: ", errorDetails);
+            store.dispatch(configActions.showPreloader(false));
             break;
     }
 

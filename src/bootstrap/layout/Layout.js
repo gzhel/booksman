@@ -2,13 +2,20 @@ import React from "react";
 import BooksmanLogo from "../../assets/images/booksman_logo.png";
 import {connect} from "react-redux";
 import {LinkRouter} from "../../components/link-router";
+import {useHistory} from "react-router";
 
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = () => ({});
 
 const ConnectedLayout = ({children, path}) => {
-    console.log('path', path);
+
+    const history = useHistory();
+
+    const onLogoutClicked = () => {
+        localStorage.removeItem("booksmanUserId");
+        history.push('/');
+    };
 
     return (
         <div className={"layout"}>
@@ -24,7 +31,7 @@ const ConnectedLayout = ({children, path}) => {
                     </button>
                     <button className={"components__button--reset"}
                             type={"button"}
-                            onClick={() => console.log('logout')}>
+                            onClick={onLogoutClicked}>
                         Logout
                     </button>
                 </div>
@@ -56,13 +63,13 @@ const ConnectedLayout = ({children, path}) => {
                             Orders
                         </LinkRouter>
                     </li>
-                    <li>
+                    {/*<li>
                         <LinkRouter to={"/chat"}
                                     path={path}
                                     icon={"chat"}>
                             Chat
                         </LinkRouter>
-                    </li>
+                    </li>*/}
                 </ul>
             </nav>
             <div className={"layout__page"}>

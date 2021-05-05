@@ -13,6 +13,7 @@ export function* authEffects() {
 function* onAuthClicked(action) {
     try {
         const {login, password, history} = action.payload;
+        yield put(configActions.showPreloader(true));
         const authFields = {log: login, pass: password};
         const userId = yield authApiService.signIn(authFields);
         yield localStorage.setItem('booksmanUserId', userId.data);

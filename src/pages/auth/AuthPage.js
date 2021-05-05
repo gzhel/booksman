@@ -10,6 +10,7 @@ const mapStateToProps = (root) => ({
     isAuthorized: configSelectors.isAuthorized(root),
     login: authSelectors.login(root),
     password: authSelectors.password(root),
+    isShowPreloader: configSelectors.isShowPreloader(root),
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -23,12 +24,13 @@ const ConnectedAuthPage = ({
     onInputChanged,
     login,
     password,
+    isShowPreloader,
 }) => {
 
     const history = useHistory();
 
     return isAuthorized ? <Redirect to={"/profile"} /> : (
-        <div className={"auth-page"}>
+        <div className={"auth-page"} style={isShowPreloader ? {filter: "blur(5px)"} : {filter: "none"}}>
             <header className={"auth-page__header"}>
                 <button className={"components__button--language-ru"}
                         onClick={() => console.log("Switch to Russian")}>
