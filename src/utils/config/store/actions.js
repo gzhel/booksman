@@ -10,7 +10,13 @@ const CheckAuthAction = (history) => ({
     type: ConfigActionTypes.CHECK_AUTH,
 });
 
+const ShowErrorsAction = (errors) => ({
+    payload: errors,
+    type: ConfigActionTypes.SHOW_ERRORS,
+});
+
 export const configActions = {
     showPreloader: ShowPreloaderAction,
     checkAuth: CheckAuthAction,
+    showErrors: ShowErrorsAction,
 };

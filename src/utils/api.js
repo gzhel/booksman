@@ -22,10 +22,12 @@ publicApi.interceptors.response.use(function (response) {
         case 401 :
             console.log("401 details: ", errorDetails);
             store.dispatch(configActions.showPreloader(false));
+            store.dispatch(configActions.showErrors(true));
             break;
         case 500 :
             console.log("500 details: ", errorDetails);
             store.dispatch(configActions.showPreloader(false));
+            store.dispatch(configActions.showErrors(true));
             break;
     }
 

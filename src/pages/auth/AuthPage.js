@@ -1,21 +1,24 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import BooksmanLogo from "../../assets/images/booksman_logo.png";
 import {Redirect, useHistory} from "react-router";
 import {authActions} from "./store/actions";
 import {authSelectors} from "./store/selectors";
 import {configSelectors} from "../../utils/config/store/selectors";
+import {configActions} from "../../utils/config/store/actions";
 
 const mapStateToProps = (root) => ({
     isAuthorized: configSelectors.isAuthorized(root),
     login: authSelectors.login(root),
     password: authSelectors.password(root),
     isShowPreloader: configSelectors.isShowPreloader(root),
+    isShowErrors: configSelectors.isShowErrors(root),
 });
 
 const mapDispatchToProps = (dispatch) => ({
     onAuthClicked: (authData) => dispatch(authActions.onAuthClicked(authData)),
     onInputChanged: (event) => dispatch(authActions.onInputChanged(event)),
+    showErrors: (errors) => dispatch(configActions.showErrors(errors)),
 });
 
 const ConnectedAuthPage = ({
@@ -25,7 +28,13 @@ const ConnectedAuthPage = ({
     login,
     password,
     isShowPreloader,
+    isShowErrors,
+    showErrors,
 }) => {
+
+    useEffect(() => {
+        return () => showErrors(false);
+    }, []); // eslint-disable-line
 
     const history = useHistory();
 
@@ -81,6 +90,11 @@ const ConnectedAuthPage = ({
                         Sign in
                     </button>
                 </div>
+                {isShowErrors &&
+                    <label style={{color: "red", margin: "0 auto -30px auto",}}>
+                        Not all fields are filled in!
+                    </label>
+                }
             </section>
             <footer className={"auth-page__footer"}>
                 <p className={"auth-page__footer--copyright"}>

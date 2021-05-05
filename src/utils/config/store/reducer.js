@@ -18,6 +18,15 @@ export const configReducer = (state = configStateInitial, action) => {
             }
         }
 
+        case ConfigActionTypes.SHOW_ERRORS: {
+            const isShowErrors = action.payload;
+
+            return {
+                ...state,
+                isShowErrors: isShowErrors,
+            }
+        }
+
         default: {
             return state;
         }
