@@ -1,0 +1,20 @@
+@import "../../styles/theme/variables";
+
+.components__icon {
+  &--text {
+    text-transform: uppercase;
+    color: $black;
+    font-stretch: expanded;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  &--active {
+    span {
+      text-decoration: underline;
+      color: $primary-color;
+    }
+  }
+}

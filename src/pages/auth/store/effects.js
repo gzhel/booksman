@@ -1,7 +1,8 @@
-import {all, takeEvery} from "redux-saga/effects";
+import {all, takeEvery, put} from "redux-saga/effects";
 
 import {authActionTypes} from "./model";
 import {authApiService} from "../AuthPage.ApiService";
+import {configActions} from "../../../utils/config/store/actions";
 
 export function* authEffects() {
     yield all([
@@ -11,11 +12,11 @@ export function* authEffects() {
 
 function* onAuthClicked(action) {
     try {
-        const {login, password} = action.payload;
+        const {login, password, history} = action.payload;
         const authFields = {log: login, pass: password};
         const userId = yield authApiService.signIn(authFields);
         yield localStorage.setItem('booksmanUserId', userId.data);
-
+        yield put(configActions.checkAuth(history));
     } catch (error) {
         yield console.log("onAuthClicked error:", onAuthClicked);
     }

@@ -8,11 +8,13 @@ export function* configEffects() {
     ]);
 }
 
-function* checkAuth() {
+function* checkAuth(action) {
     try {
+        const history = action.payload;
         const isAuthorized = yield select(configSelectors.isAuthorized);
-        yield console.log('isAuthorized', isAuthorized);
-
+        if (isAuthorized) {
+            yield history.push('/profile');
+        }
     } catch (error) {
         console.log("onAuthClicked error:", error);
     }

@@ -1,11 +1,10 @@
-import React, {useEffect} from "react";
+import React from "react";
 import {connect} from "react-redux";
 import BooksmanLogo from "../../assets/images/booksman_logo.png";
-import {Redirect} from "react-router";
+import {Redirect, useHistory} from "react-router";
 import {authActions} from "./store/actions";
 import {authSelectors} from "./store/selectors";
 import {configSelectors} from "../../utils/config/store/selectors";
-import {configActions} from "../../utils/config/store/actions";
 
 const mapStateToProps = (root) => ({
     isAuthorized: configSelectors.isAuthorized(root),
@@ -16,7 +15,6 @@ const mapStateToProps = (root) => ({
 const mapDispatchToProps = (dispatch) => ({
     onAuthClicked: (authData) => dispatch(authActions.onAuthClicked(authData)),
     onInputChanged: (event) => dispatch(authActions.onInputChanged(event)),
-    checkAuth: () => dispatch(configActions.checkAuth()),
 });
 
 const ConnectedAuthPage = ({
@@ -25,12 +23,9 @@ const ConnectedAuthPage = ({
     onInputChanged,
     login,
     password,
-    checkAuth,
 }) => {
 
-    useEffect(() => {
-        checkAuth();
-    }, [isAuthorized]); // eslint-disable-line
+    const history = useHistory();
 
     return isAuthorized ? <Redirect to={"/profile"} /> : (
         <div className={"auth-page"}>
@@ -80,7 +75,7 @@ const ConnectedAuthPage = ({
                 <div className={"auth-page__content--submit"}>
                     <button className={"components__button--default"}
                             type={"button"}
-                            onClick={() => onAuthClicked({login, password})}>
+                            onClick={() => onAuthClicked({login, password, history})}>
                         Sign in
                     </button>
                 </div>

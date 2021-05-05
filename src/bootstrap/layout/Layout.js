@@ -1,12 +1,15 @@
 import React from "react";
 import BooksmanLogo from "../../assets/images/booksman_logo.png";
 import {connect} from "react-redux";
+import {LinkRouter} from "../../components/link-router";
 
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = () => ({});
 
-const ConnectedLayout = ({children}) => {
+const ConnectedLayout = ({children, path}) => {
+    console.log('path', path);
+
     return (
         <div className={"layout"}>
             <header className={"layout__header"}>
@@ -32,10 +35,34 @@ const ConnectedLayout = ({children}) => {
                     <img src={BooksmanLogo} alt={"Logo"} width={98} height={111}/>
                 </div>
                 <ul className={"layout__sidebar--menu"}>
-                    <li>Profile</li>
-                    <li>Market</li>
-                    <li>Orders</li>
-                    <li>Chat</li>
+                    <li>
+                        <LinkRouter to={"/profile"}
+                                    path={path}
+                                    icon={"profile"}>
+                            Profile
+                        </LinkRouter>
+                    </li>
+                    <li>
+                        <LinkRouter to={"/market"}
+                                    path={path}
+                                    icon={"market"}>
+                            Market
+                        </LinkRouter>
+                    </li>
+                    <li>
+                        <LinkRouter to={"/orders"}
+                                    path={path}
+                                    icon={"orders"}>
+                            Orders
+                        </LinkRouter>
+                    </li>
+                    <li>
+                        <LinkRouter to={"/chat"}
+                                    path={path}
+                                    icon={"chat"}>
+                            Chat
+                        </LinkRouter>
+                    </li>
                 </ul>
             </nav>
             <div className={"layout__page"}>
@@ -47,4 +74,4 @@ const ConnectedLayout = ({children}) => {
 
 const Layout = connect(mapStateToProps, mapDispatchToProps)(ConnectedLayout);
 
-export default props => <Layout {...props}/>;
+export default props => <Layout {...props}/>; // eslint-disable-line

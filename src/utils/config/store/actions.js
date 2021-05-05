@@ -5,8 +5,8 @@ const ShowPreloaderAction = (isShowPreloader) => ({
     type: ConfigActionTypes.PRELOADER_PAGE_IS_SHOW,
 });
 
-const CheckAuthAction = () => ({
-    payload: null,
+const CheckAuthAction = (history) => ({
+    payload: history,
     type: ConfigActionTypes.CHECK_AUTH,
 });
 
