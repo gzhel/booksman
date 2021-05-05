@@ -4,7 +4,7 @@
   &__background {
     width: 100%;
     height: 100vh;
-    background-color: $bg-light;
+    background: radial-gradient(circle, #79795a, #7c7c5f, #808064, #83836a, #87876f);
     padding-top: 60px;
   }
 }

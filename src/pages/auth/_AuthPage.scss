@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: $layout-color;
+  background: radial-gradient(circle, #8a7466, #68554f, #463937, #261f20, #000000);
 
   &__header {
     display: flex;

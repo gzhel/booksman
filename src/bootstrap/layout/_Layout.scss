@@ -6,7 +6,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background-color: $layout-color;
+    background: linear-gradient(to right top, #8a7466, #8a7568, #8b7769, #8b786b, #8b796d, #8e7d72, #928277, #95867c, #9d8f85, #a5978e, #ada098, #b5a9a1);
     height: 60px;
     width: 100%;
     border-bottom: 2px solid $primary-color;
@@ -25,7 +25,7 @@
     padding-top: 50px;
     width: 220px;
     height: 100%;
-    background-color: $layout-color;
+    background: linear-gradient(to left bottom, #8a7466, #8a7568, #8b7769, #8b786b, #8b796d, #8e7d72, #928277, #95867c, #9d8f85, #a5978e, #ada098, #b5a9a1);
     border-right: 2px solid $primary-color;
     &--logo {
       margin: 0 auto 40px auto;
