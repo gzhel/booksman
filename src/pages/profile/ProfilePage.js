@@ -2,12 +2,16 @@ import React from "react";
 import {connect} from "react-redux";
 import Book from "../../assets/images/book-example.jpg";
 import Avatar from "../../assets/images/avatar.png";
+import {modalActions} from "../../utils/modal/store/actions";
+import {OrderModal} from "./order-modal/OrderModal";
 
 const mapStateToProps = () => ({});
 
-const mapDispatchToProps = () => ({});
+const mapDispatchToProps = (dispatch) => ({
+    onShowModal: (orderId) => dispatch(modalActions.showModal({OrderModal, orderId}))
+});
 
-const ConnectedProfilePage = () => {
+const ConnectedProfilePage = ({onShowModal}) => {
 
     const mockUserInfo = {
         firstName: 'Oleg',
@@ -75,10 +79,11 @@ const ConnectedProfilePage = () => {
                 <div className={"profile__orders--list"}>
                     {mockOrders.map((order) =>
                         <img src={Book}
+                             key={order?.id}
                              alt="Avatar"
                              width={122}
                              height={194}
-                             onClick={() => console.log("onShowModal(ModalName, order?.id)", order)}
+                             onClick={() => onShowModal(order?.id)}
                         />
                     )}
                 </div>
