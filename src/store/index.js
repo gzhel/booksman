@@ -6,6 +6,8 @@ import {configReducer} from "../utils/config/store/reducer";
 import {authReducer} from "../pages/auth/store/reducer";
 import {authEffects} from "../pages/auth/store/effects";
 import {configEffects} from "../utils/config/store/effects";
+import {modalReducer} from "../utils/modal/store/reducer";
+import {modalEffects} from "../utils/modal/store/effects";
 
 const composeEnhancers = typeof window === 'object' &&
         window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
@@ -14,12 +16,14 @@ const composeEnhancers = typeof window === 'object' &&
 const rootReducer = combineReducers({
     configReducer,
     authReducer,
+    modalReducer,
 });
 
 function* rootEffects() {
     yield all([
         fork(configEffects),
         fork(authEffects),
+        fork(modalEffects),
     ])
 }
 
