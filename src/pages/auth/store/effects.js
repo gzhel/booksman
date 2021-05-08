@@ -19,6 +19,6 @@ function* onAuthClicked(action) {
         yield localStorage.setItem('booksmanUserId', userId.data);
         yield put(configActions.checkAuth(history));
     } catch (error) {
-        yield console.log("onAuthClicked error:", onAuthClicked);
+        yield console.log("onAuthClicked error:", error);
     }
 }
