@@ -30,6 +30,21 @@ const GetOrderCommentsAction = (orderComments) => ({
     type: profileActionTypes.GET_ORDER_COMMENTS,
 });
 
+const OnShowAddCashModalAction = () => ({
+    payload: null,
+    type: profileActionTypes.ON_SHOW_ADD_CASH_MODAL,
+});
+
+const OnHideAddCashModalAction = () => ({
+    payload: null,
+    type: profileActionTypes.ON_HIDE_ADD_CASH_MODAL,
+});
+
+const AddCashAction = (cashValue) => ({
+    payload: cashValue,
+    type: profileActionTypes.ADD_CASH,
+});
+
 export const profileActions = {
     getProfileData: GetProfileDataAction,
     getUserInfo: GetUserInfoAction,
@@ -37,4 +52,7 @@ export const profileActions = {
     getOrderData: GetOrderDataAction,
     getOrderInfo: GetOrderInfoAction,
     getOrderComments: GetOrderCommentsAction,
+    onShowAddCashModal: OnShowAddCashModalAction,
+    onHideAddCashModal: OnHideAddCashModalAction,
+    addCash: AddCashAction,
 };

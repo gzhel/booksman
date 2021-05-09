@@ -38,6 +38,20 @@ export const profileReducer = (state = profileInitial, action) => {
             }
         }
 
+        case profileActionTypes.ON_SHOW_ADD_CASH_MODAL: {
+            return {
+                ...state,
+                showAddCashModal: true,
+            }
+        }
+
+        case profileActionTypes.ON_HIDE_ADD_CASH_MODAL: {
+            return {
+                ...state,
+                showAddCashModal: false,
+            }
+        }
+
         default: {
             return state;
         }

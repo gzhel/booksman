@@ -19,25 +19,25 @@ const ConnectedProfileOrderPage = ({getProfileOrder, orderInfo, orderComments}) 
 
     return (
         <div className={"profile page__background"}>
-            <section className={"components__card"}>
+            <section className={"components__card profile__order"}>
                 <img src={orderInfo?.cover}
                      alt="Avatar"
-                     width={160}
-                     height={160}/>
-                <div>
-                    <p>Name: {orderInfo?.name}</p>
-                    <p>Description: {orderInfo?.discription}</p>
-                    <p>Pages: {orderInfo?.pages}</p>
-                    <p>Pages: {orderInfo?.weight}</p>
-                    <p>Pages: {orderInfo?.price}</p>
+                     width={244}
+                     height={398}/>
+                <div className={"profile__order--info"}>
+                    <p><strong>Name: </strong>{orderInfo?.name}</p>
+                    <p><strong>Pages: </strong>{orderInfo?.pages}</p>
+                    <p><strong>Weight: </strong>{orderInfo?.weight}</p>
+                    <p><strong>Price: </strong>{orderInfo?.price} ₽</p>
+                    <p><strong>Description: </strong>{orderInfo?.discription}</p>
                 </div>
             </section>
-            <section className={"components__card"}>
-                <ol>
+            <section className={"components__card mb-md"}>
+                <ul className={"profile__order--comments"}>
                     {orderComments.map(el =>
-                        <li key={el.id}>* {el.text.substr(0, 500) + "..."}</li>
+                        <li key={el.id}>{el.text.substr(0, 400) + "..."}</li>
                     )}
-                </ol>
+                </ul>
             </section>
         </div>
     )

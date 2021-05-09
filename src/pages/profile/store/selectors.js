@@ -8,9 +8,12 @@ const orderInfo = (root) => profileState(root)?.orderInfo;
 
 const orderComments = (root) => profileState(root)?.orderComments;
 
+const showAddCashModal = (root) => profileState(root)?.showAddCashModal;
+
 export const profileSelectors ={
     userInfo,
     userOrders,
     orderInfo,
     orderComments,
+    showAddCashModal,
 };

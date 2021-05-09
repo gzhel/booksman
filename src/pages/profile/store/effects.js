@@ -8,6 +8,7 @@ export function* profileEffects() {
     yield all([
         takeEvery(profileActionTypes.GET_PROFILE_DATA, getProfileData),
         takeEvery(profileActionTypes.GET_ORDER_DATA, getOrderData),
+        takeEvery(profileActionTypes.ADD_CASH, addCash),
     ]);
 }
 
@@ -32,5 +33,15 @@ function* getOrderData(action) {
         yield put(profileActions.getOrderComments(orderComments.data));
     } catch (error) {
         yield console.log("getOrderData error:", error);
+    }
+}
+
+function* addCash(action) {
+    try {
+        const cashValue = action.payload;
+        const userId = localStorage.getItem("booksmanUserId");
+        yield profileApiService.addCash({cashValue, userId});
+    } catch (error) {
+        yield console.log("addCash error:", error);
     }
 }

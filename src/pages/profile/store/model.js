@@ -3,6 +3,7 @@ export const profileInitial = {
     userOrders: [],
     orderInfo: [],
     orderComments: [],
+    showAddCashModal: false,
 };
 
 export const profileActionTypes = {
@@ -12,4 +13,7 @@ export const profileActionTypes = {
     GET_ORDER_DATA: 'PROFILE.GET_ORDER_DATA',
     GET_ORDER_INFO: 'PROFILE.GET_ORDER_INFO',
     GET_ORDER_COMMENTS: 'PROFILE.GET_ORDER_COMMENTS',
+    ON_SHOW_ADD_CASH_MODAL: 'PROFILE.ON_SHOW_ADD_CASH_MODAL',
+    ON_HIDE_ADD_CASH_MODAL: 'PROFILE.ON_HIDE_ADD_CASH_MODAL',
+    ADD_CASH: 'PROFILE.ADD_CASH',
 };

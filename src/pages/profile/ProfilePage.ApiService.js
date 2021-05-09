@@ -16,6 +16,10 @@ class ProfilePageApiService {
     getSelectedBookComments(bookId) {
         return publicApi.get(`/comments/bybookid?id=${bookId}`);
     }
+
+    addCash({cashValue, userId}) {
+        return publicApi.get(`/users/changecash?id=${userId}&cash=${cashValue}`);
+    }
 }
 
 export const profileApiService = new ProfilePageApiService();

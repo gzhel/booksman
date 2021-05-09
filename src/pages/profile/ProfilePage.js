@@ -5,15 +5,18 @@ import {profileActions} from "./store/actions";
 import {profileSelectors} from "./store/selectors";
 import {configSelectors} from "../../utils/config/store/selectors";
 import {Link} from "react-router-dom";
+import {AddCashModal} from "./add-cash-modal/AddCashModal";
 
 const mapStateToProps = (root) => ({
     isShowPreloader: configSelectors.isShowPreloader(root),
     userInfo: profileSelectors.userInfo(root),
     userOrders: profileSelectors.userOrders(root),
+    showAddCashModal: profileSelectors.showAddCashModal(root),
 });
 
 const mapDispatchToProps = (dispatch) => ({
     getProfileData: () => dispatch(profileActions.getProfileData()),
+    onShowAddCashModal: () => dispatch(profileActions.onShowAddCashModal()),
 });
 
 const ConnectedProfilePage = ({
@@ -21,11 +24,13 @@ const ConnectedProfilePage = ({
     userInfo,
     userOrders,
     isShowPreloader,
+    onShowAddCashModal,
+    showAddCashModal
 }) => {
 
     useEffect(() => {
         getProfileData();
-    }, []); // eslint-disable-line
+    }, [showAddCashModal]); // eslint-disable-line
 
     return (
         <div className={"profile page__background"} style={isShowPreloader ? {filter: "blur(5px)"} : {filter: "none"}}>
@@ -38,7 +43,14 @@ const ConnectedProfilePage = ({
                     <p>First name: {userInfo?.firstname}</p>
                     <p>Last name: {userInfo?.secondname}</p>
                     <p>Age: {userInfo?.age}</p>
-                    <p>Cash: {userInfo?.cash} ₽</p>
+                    <p>
+                        Cash: {userInfo?.cash} ₽
+                        <button className={"components__button--default"}
+                                style={{marginLeft: 20}}
+                                onClick={onShowAddCashModal}>
+                            Add cash
+                        </button>
+                    </p>
                 </div>
             </section>
             <section className={"components__card profile__orders"}>
@@ -61,6 +73,7 @@ const ConnectedProfilePage = ({
                     )}
                 </div>
             </section>
+            {showAddCashModal && <AddCashModal/>}
         </div>
     );
 };

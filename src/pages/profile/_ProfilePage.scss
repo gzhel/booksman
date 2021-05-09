@@ -56,4 +56,28 @@
       }
     }
   }
+  &__order {
+    display: flex;
+    &--info {
+      margin-left: 40px;
+    }
+    &--comments {
+      list-style-type: circle;
+      li {
+        margin: 20px 0;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .input {
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    height: 48px !important;
+    padding: 0 15px;
+    background: $white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
 }

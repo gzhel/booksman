@@ -1,7 +1,7 @@
 import {ModalActionTypes} from "./model";
 
-const CloseModalAction = () => ({
-    payload: null,
+const CloseModalAction = (modalData) => ({
+    payload: modalData,
     type: ModalActionTypes.CLOSE_MODAL,
 });
 
