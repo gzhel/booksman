@@ -8,6 +8,7 @@ import {ConfigPage} from "../pages/config/ConfigPage";
 import {MarketPage} from "../pages/market/MarketPage";
 import {OrdersPage} from "../pages/orders/OrdersPage";
 import {ProfileOrderPage} from "../pages/profile/order/ProfileOrderPage";
+import {MarketBookPage} from "../pages/market/book/MarketBookPage";
 
 const Router = () => {
 
@@ -18,7 +19,8 @@ const Router = () => {
                 <Route path={"/auth"} component={AuthPage}/>
                 <LayoutRouter exact path={"/profile"} component={ProfilePage}/>
                 <LayoutRouter path={`/profile/orders/:orderId`} component={ProfileOrderPage}/>
-                <LayoutRouter path={"/market"} component={MarketPage}/>
+                <LayoutRouter exact path={"/market"} component={MarketPage}/>
+                <LayoutRouter path={`/market/book/:bookId`} component={MarketBookPage}/>
                 <LayoutRouter path={"/orders"} component={OrdersPage}/>
                 {/*<LayoutRouter path={"/chat"} component={ChatPage}/>*/}
             </Switch>
