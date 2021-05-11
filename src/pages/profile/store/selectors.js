@@ -10,7 +10,7 @@ const orderComments = (root) => profileState(root)?.orderComments;
 
 const showAddCashModal = (root) => profileState(root)?.showAddCashModal;
 
-export const profileSelectors ={
+export const profileSelectors = {
     userInfo,
     userOrders,
     orderInfo,

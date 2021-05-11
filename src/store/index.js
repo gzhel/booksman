@@ -10,6 +10,8 @@ import {modalReducer} from "../utils/modal/store/reducer";
 import {modalEffects} from "../utils/modal/store/effects";
 import {profileReducer} from "../pages/profile/store/reducer";
 import {profileEffects} from "../pages/profile/store/effects";
+import {marketReducer} from "../pages/market/store/reducer";
+import {marketEffects} from "../pages/market/store/effects";
 
 const composeEnhancers = typeof window === 'object' &&
         window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
@@ -20,6 +22,7 @@ const rootReducer = combineReducers({
     authReducer,
     modalReducer,
     profileReducer,
+    marketReducer,
 });
 
 function* rootEffects() {
@@ -28,6 +31,7 @@ function* rootEffects() {
         fork(authEffects),
         fork(modalEffects),
         fork(profileEffects),
+        fork(marketEffects),
     ])
 }
 
