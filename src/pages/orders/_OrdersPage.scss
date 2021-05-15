@@ -1,0 +1,54 @@
+.orders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    @media all and (max-width: 1400px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    @media all and (max-width: 1200px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @media all and (max-width: 1000px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &--item {
+      display: flex;
+      flex-direction: column;
+      margin: 20px;
+      align-items: center;
+
+      &-name {
+        font-size: 12px;
+        height: 54px;
+        overflow: hidden;
+        padding-bottom: 5px;
+      }
+
+      &-price {
+        font-size: 14px;
+        padding-bottom: 5px;
+      }
+
+      p {
+        margin-bottom: 0;
+
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+
+    &--info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-left: 20px;
+    }
+  }
+}

@@ -9,6 +9,7 @@ import {MarketPage} from "../pages/market/MarketPage";
 import {OrdersPage} from "../pages/orders/OrdersPage";
 import {ProfileOrderPage} from "../pages/profile/order/ProfileOrderPage";
 import {MarketBookPage} from "../pages/market/book/MarketBookPage";
+import {OrderDetailPage} from "../pages/orders/order/OrdersOrderPage";
 
 const Router = () => {
 
@@ -21,7 +22,8 @@ const Router = () => {
                 <LayoutRouter path={`/profile/orders/:orderId`} component={ProfileOrderPage}/>
                 <LayoutRouter exact path={"/market"} component={MarketPage}/>
                 <LayoutRouter path={`/market/book/:bookId`} component={MarketBookPage}/>
-                <LayoutRouter path={"/orders"} component={OrdersPage}/>
+                <LayoutRouter exact path={"/orders"} component={OrdersPage}/>
+                <LayoutRouter path={`/orders/order/:orderId`} component={OrderDetailPage}/>
                 {/*<LayoutRouter path={"/chat"} component={ChatPage}/>*/}
             </Switch>
         </BrowserRouter>
