@@ -13,6 +13,11 @@
       cursor: pointer;
       background-color: lighten($primary-color, 3);
     }
+
+    &:disabled {
+      background-color: #777777;
+      color: $white;
+    }
   }
 
   &--minimized {

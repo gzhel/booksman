@@ -2,7 +2,7 @@ import {publicApi} from "../../utils/api";
 
 class MarketPageApiService {
     getBooksList() {
-        return publicApi.get(`/books/`);
+        return publicApi.get(`/books/separated?from=100&to=123`);
     }
 
     getBookInfo(bookId) {
@@ -13,8 +13,8 @@ class MarketPageApiService {
         return publicApi.get(`/comments/bybookid?id=${bookId}`);
     }
 
-    buyBook({bookId, userId}) {
-        // return publicApi.post(`/books/buy`, {bookId, userId});
+    buyBook({bookId, userId, postId}) {
+        return publicApi.get(`/bills/buybook?bookid=${bookId}&userid=${userId}&postid=${postId}`);
     }
 }
 

@@ -25,21 +25,20 @@ const ConnectedMarketPage = ({
         getMarketData();
     }, []); // eslint-disable-line
 
-    console.log('booksList', booksList);
-
     return (
         <div className={"market page__background"} style={isShowPreloader ? {filter: "blur(5px)"} : {filter: "none"}}>
             <section className={"components__card market__items"}>
-                {booksList.map((book, index) =>
+                {booksList?.map((book, index) =>
                     (index < pagesIndex) &&
                     <div className={"market__items--item"} key={book?.id}>
                         <img src={book?.cover}
                              alt="Avatar"
                              width={122}
                              height={194}/>
-                        <p>{book?.name}</p>
-                        <p>{book?.price} ₽</p>
-                        <Link to={`/market/book/${book?.id}`}>
+                        <p className={"market__items--item-name"}>{book?.name}</p>
+                        <p className={"market__items--item-price"}>{book?.price} ₽</p>
+                        <Link to={`/market/book/${book?.id}`}
+                              onClick={() => localStorage.setItem("booksmanMarketBookId", book?.id)}>
                             <button className={"components__button--minimized"}>
                                 Detail info
                             </button>

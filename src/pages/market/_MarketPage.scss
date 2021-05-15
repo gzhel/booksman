@@ -22,6 +22,18 @@
       margin: 20px;
       align-items: center;
 
+      &-name {
+        font-size: 12px;
+        height: 54px;
+        overflow: hidden;
+        padding-bottom: 5px;
+      }
+
+      &-price {
+        font-size: 14px;
+        padding-bottom: 5px;
+      }
+
       p {
         margin-bottom: 0;
 
@@ -48,6 +60,21 @@
         margin: 0 auto;
         width: 300px;
       }
+    }
+  }
+
+  &__buy-modal {
+    display: flex;
+
+    &--info {
+      margin-left: 10px;
+      font-size: 15px;
+    }
+
+    &--button {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
     }
   }
 }

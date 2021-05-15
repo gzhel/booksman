@@ -5,8 +5,8 @@ const GetMarketDataAction = () => ({
     type: marketActionTypes.GET_MARKET_DATA,
 });
 
-const GetBooksListAction = () => ({
-    payload: null,
+const GetBooksListAction = (booksList) => ({
+    payload: booksList,
     type: marketActionTypes.GET_BOOKS_LIST,
 });
 
@@ -55,6 +55,11 @@ const OnHideBuyFailedModalAction = () => ({
     type: marketActionTypes.ON_HIDE_BUY_FAILED_MODAL,
 });
 
+const OnBuyButtonClickedAction = (buyData) => ({
+    payload: buyData,
+    type: marketActionTypes.ON_BUY_BUTTON_CLICKED,
+})
+
 export const marketActions = {
     getBooksList: GetBooksListAction,
     getBookData: GetBookDataAction,
@@ -67,4 +72,5 @@ export const marketActions = {
     onShowBuyFailedModal: OnShowBuyFailedModalAction,
     onHideBuyFailedModal: OnHideBuyFailedModalAction,
     getMarketData: GetMarketDataAction,
+    onBuyButtonClicked: OnBuyButtonClickedAction,
 };
