@@ -6,6 +6,7 @@ import {profileSelectors} from "./store/selectors";
 import {configSelectors} from "../../utils/config/store/selectors";
 import {Link} from "react-router-dom";
 import {AddCashModal} from "./add-cash-modal/AddCashModal";
+import {Trans} from "@lingui/macro";
 
 const mapStateToProps = (root) => ({
     isShowPreloader: configSelectors.isShowPreloader(root),
@@ -40,22 +41,22 @@ const ConnectedProfilePage = ({
                      width={160}
                      height={160}/>
                 <div className={"profile__user--info"}>
-                    <p>First name: {userInfo?.firstname}</p>
-                    <p>Last name: {userInfo?.secondname}</p>
-                    <p>Age: {userInfo?.age}</p>
+                    <p><Trans id={"profile__first-name"}>First name:</Trans> {userInfo?.firstname}</p>
+                    <p><Trans id={"profile__last-name"}>Last name:</Trans> {userInfo?.secondname}</p>
+                    <p><Trans id={"profile__age"}>Age:</Trans> {userInfo?.age}</p>
                     <p>
-                        Cash: {userInfo?.cash} ₽
+                        <Trans id={"profile__cash"}>Cash:</Trans> {userInfo?.cash} ₽
                         <button className={"components__button--default"}
                                 style={{marginLeft: 20}}
                                 onClick={onShowAddCashModal}>
-                            Add cash
+                            <Trans id={"profile__add-cash"}>Add cash</Trans>
                         </button>
                     </p>
                 </div>
             </section>
             <section className={"components__card profile__orders"}>
                 <h3 className={"profile__orders--title"}>
-                    Your orders:
+                    <Trans id={"profile__your-orders"}>Your orders:</Trans>
                 </h3>
                 <div className={"profile__orders--list"}>
                     {userOrders.map((order) =>

@@ -4,6 +4,7 @@ import {configSelectors} from "../../utils/config/store/selectors";
 import {Link} from "react-router-dom";
 import {marketSelectors} from "./store/selectors";
 import {marketActions} from "./store/actions";
+import {Trans} from "@lingui/macro";
 
 const mapStateToProps = (root) => ({
     isShowPreloader: configSelectors.isShowPreloader(root),
@@ -40,7 +41,7 @@ const ConnectedMarketPage = ({
                         <Link to={`/market/book/${book?.id}`}
                               onClick={() => localStorage.setItem("booksmanMarketBookId", book?.id)}>
                             <button className={"components__button--minimized"}>
-                                Detail info
+                                <Trans id={"market__detail-info"}>Detail info</Trans>
                             </button>
                         </Link>
                     </div>
@@ -49,7 +50,7 @@ const ConnectedMarketPage = ({
             </section>
             <button className={"market__button components__button--default"}
                     onClick={() => setPagesIndex(pagesIndex + 10)}>
-                Load more
+                <Trans id={"market__load-more"}>Load more</Trans>
             </button>
         </div>
     )

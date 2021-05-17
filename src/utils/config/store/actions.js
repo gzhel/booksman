@@ -15,8 +15,14 @@ const ShowErrorsAction = (errors) => ({
     type: ConfigActionTypes.SHOW_ERRORS,
 });
 
+const LanguageChangeAction = (language = 'en') => ({
+    payload: language,
+    type: ConfigActionTypes.LANGUAGE_CHANGE,
+});
+
 export const configActions = {
     showPreloader: ShowPreloaderAction,
     checkAuth: CheckAuthAction,
     showErrors: ShowErrorsAction,
+    languageChange: LanguageChangeAction,
 };

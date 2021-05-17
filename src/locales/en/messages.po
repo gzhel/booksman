@@ -12,3 +12,136 @@ msgstr ""
 "Last-Translator: \n"
 "Language-Team: \n"
 "Plural-Forms: \n"
+
+#: src/pages/auth/AuthPage.js:98
+msgid "auth-page__error"
+msgstr "Not all fields are filled in!"
+
+#: src/pages/auth/AuthPage.js:106
+msgid "auth-page__gregory-zhelyabin"
+msgstr "© 2021 Gregory Zhelyabin."
+
+#: src/pages/auth/AuthPage.js:66
+msgid "auth-page__login"
+msgstr "Login:"
+
+#: src/pages/auth/AuthPage.js:79
+msgid "auth-page__password"
+msgstr "Password:"
+
+#: src/pages/auth/AuthPage.js:93
+msgid "auth-page__sign-in"
+msgstr "Sign in"
+
+#: src/bootstrap/layout/Layout.js:39
+msgid "layout__logout"
+msgstr "Logout"
+
+#: src/bootstrap/layout/Layout.js:60
+msgid "layout__market"
+msgstr "Market"
+
+#: src/bootstrap/layout/Layout.js:67
+msgid "layout__orders"
+msgstr "Orders"
+
+#: src/bootstrap/layout/Layout.js:53
+msgid "layout__profile"
+msgstr "Profile"
+
+#: src/pages/orders/order/OrdersOrderPage.js:39
+msgid "market__arr-date"
+msgstr "Arrival date:"
+
+#: src/pages/market/book/MarketBookPage.js:54
+msgid "market__buy"
+msgstr "Buy"
+
+#: src/pages/market/book/modals/BuyModal.js:54
+msgid "market__buy-now"
+msgstr "Buy now"
+
+#: src/pages/orders/order/OrdersOrderPage.js:38
+msgid "market__dep-date"
+msgstr "Departure date:"
+
+#: src/pages/market/book/MarketBookPage.js:50
+msgid "market__description"
+msgstr "Description:"
+
+#: src/pages/market/MarketPage.js:44
+#: src/pages/orders/OrdersPage.js:39
+msgid "market__detail-info"
+msgstr "Detail info"
+
+#: src/pages/market/book/modals/BuyFailedModal.js:18
+msgid "market__failed"
+msgstr "You hadn't enough money to pay it!"
+
+#: src/pages/market/MarketPage.js:53
+#: src/pages/orders/OrdersPage.js:47
+msgid "market__load-more"
+msgstr "Load more"
+
+#: src/pages/market/book/MarketBookPage.js:46
+#: src/pages/market/book/modals/BuyModal.js:39
+#: src/pages/orders/order/OrdersOrderPage.js:33
+msgid "market__name"
+msgstr "Name:"
+
+#: src/pages/market/book/MarketBookPage.js:48
+#: src/pages/orders/order/OrdersOrderPage.js:35
+msgid "market__pages"
+msgstr "Pages:"
+
+#: src/pages/market/book/modals/BuyModal.js:43
+#: src/pages/orders/order/OrdersOrderPage.js:37
+msgid "market__postomat"
+msgstr "Postomat:"
+
+#: src/pages/market/book/MarketBookPage.js:49
+#: src/pages/market/book/modals/BuyModal.js:40
+msgid "market__price"
+msgstr "Price:"
+
+#: src/pages/orders/order/OrdersOrderPage.js:36
+msgid "market__status"
+msgstr "Status:"
+
+#: src/pages/market/book/modals/BuySuccessModal.js:18
+msgid "market__success"
+msgstr "Your purchase was successful!"
+
+#: src/pages/market/book/MarketBookPage.js:47
+#: src/pages/orders/order/OrdersOrderPage.js:34
+msgid "market__weight"
+msgstr "Weight:"
+
+#: src/pages/market/book/modals/BuyModal.js:41
+msgid "market__your-cash"
+msgstr "Your cash:"
+
+#: src/pages/profile/ProfilePage.js:52
+#: src/pages/profile/add-cash-modal/AddCashModal.js:26
+msgid "profile__add-cash"
+msgstr "Add cash"
+
+#: src/pages/profile/ProfilePage.js:46
+msgid "profile__age"
+msgstr "Age:"
+
+#: src/pages/profile/ProfilePage.js:48
+msgid "profile__cash"
+msgstr "Cash:"
+
+#: src/pages/profile/ProfilePage.js:44
+msgid "profile__first-name"
+msgstr "First name:"
+
+#: src/pages/profile/ProfilePage.js:45
+msgid "profile__last-name"
+msgstr "Last name:"
+
+#: src/pages/profile/ProfilePage.js:59
+msgid "profile__your-orders"
+msgstr "Your orders:"

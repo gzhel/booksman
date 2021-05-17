@@ -5,6 +5,7 @@ import {marketActions} from "../../store/actions";
 import {Modal} from "../../../../utils/modal/Modal";
 import {marketSelectors} from "../../store/selectors";
 import {profileSelectors} from "../../../profile/store/selectors";
+import {Trans} from "@lingui/macro";
 
 const mapStateToProps = (root) => ({
     bookInfo: marketSelectors.bookInfo(root),
@@ -35,11 +36,11 @@ const ConnectedBuyModal = ({onClose, bookInfo, userInfo, onBuyButtonClicked}) =>
                      width={122}
                      height={194}/>
                 <div className={"market__buy-modal--info"}>
-                    <p><strong>Name: </strong>{bookInfo?.name}</p>
-                    <p><strong>Price: </strong>{bookInfo?.price} ₽</p>
-                    <p><strong>Your cash: </strong>{userInfo?.cash} ₽</p>
+                    <p><strong><Trans id={"market__name"}>Name:</Trans> </strong>{bookInfo?.name}</p>
+                    <p><strong><Trans id={"market__price"}>Price:</Trans> </strong>{bookInfo?.price} ₽</p>
+                    <p><strong><Trans id={"market__your-cash"}>Your cash:</Trans> </strong>{userInfo?.cash} ₽</p>
                     <div>
-                        <strong>Postomat: </strong>
+                        <strong><Trans id={"market__postomat"}>Postomat:</Trans> </strong>
                         <Select value={postId}
                                 onChange={handleChange}
                                 options={options}/>
@@ -50,7 +51,7 @@ const ConnectedBuyModal = ({onClose, bookInfo, userInfo, onBuyButtonClicked}) =>
                 <button className={"components__button--default"}
                         onClick={() => onBuyButtonClicked({bookId: bookInfo?.id, postId: postId?.id})}
                         disabled={(bookInfo?.price > userInfo?.cash) || !postId}>
-                    Buy now
+                    <Trans id={"market__buy-now"}>Buy now</Trans>
                 </button>
             </div>
         </Modal>

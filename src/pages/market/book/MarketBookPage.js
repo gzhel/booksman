@@ -5,6 +5,7 @@ import {marketSelectors} from "../store/selectors";
 import {BuyModal} from "./modals/BuyModal";
 import {BuySuccessModal} from "./modals/BuySuccessModal";
 import {BuyFailedModal} from "./modals/BuyFailedModal";
+import {Trans} from "@lingui/macro";
 
 const mapStateToProps = (root) => ({
     bookInfo: marketSelectors.bookInfo(root),
@@ -42,15 +43,15 @@ const ConnectedMarketBookPage = ({
                      height={398}/>
                 <div className={"market__book--info"}>
                     <div>
-                        <p><strong>Name: </strong>{bookInfo?.name}</p>
-                        <p><strong>Weight: </strong>{bookInfo?.weight}</p>
-                        <p><strong>Pages: </strong>{bookInfo?.pages}</p>
-                        <p><strong>Price: </strong>{bookInfo?.price} ₽</p>
-                        <p><strong>Description: </strong>{bookInfo?.discription}</p>
+                        <p><strong><Trans id={"market__name"}>Name:</Trans> </strong>{bookInfo?.name}</p>
+                        <p><strong><Trans id={"market__weight"}>Weight:</Trans> </strong>{bookInfo?.weight}</p>
+                        <p><strong><Trans id={"market__pages"}>Pages:</Trans> </strong>{bookInfo?.pages}</p>
+                        <p><strong><Trans id={"market__price"}>Price:</Trans> </strong>{bookInfo?.price} ₽</p>
+                        <p><strong><Trans id={"market__description"}>Description:</Trans> </strong>{bookInfo?.discription}</p>
                     </div>
                     <button className={"components__button--default"}
                             onClick={onShowBuyModal}>
-                        Buy
+                        <Trans id={"market__buy"}>Buy</Trans>
                     </button>
                 </div>
             </section>

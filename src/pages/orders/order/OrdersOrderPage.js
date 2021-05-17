@@ -3,6 +3,7 @@ import React, {useEffect} from "react";
 import {ordersSelectors} from "../store/selectors";
 import {ordersActions} from "../store/actions";
 import moment from "moment";
+import {Trans} from "@lingui/macro";
 
 const mapStateToProps = (root) => ({
     orderInfo: ordersSelectors.orderInfo(root),
@@ -29,13 +30,13 @@ const ConnectedOrderDetailPage = ({orderInfo, getOrderData}) => {
                      height={398}/>
                 <div className={"orders__item--info"}>
                     <div>
-                        <p><strong>Name: </strong>{orderInfo?.name}</p>
-                        <p><strong>Weight: </strong>{orderInfo?.weight}</p>
-                        <p><strong>Pages: </strong>{orderInfo?.pages}</p>
-                        <p><strong>Status: </strong>{orderInfo?.status}</p>
-                        <p><strong>Postomat: </strong>{orderInfo?.postomat}</p>
-                        <p><strong>Departure date: </strong>{moment(orderInfo?.departuredate).format("L")}</p>
-                        <p><strong>Arrival date: </strong>{moment(orderInfo?.arrivaldate).format("L")}</p>
+                        <p><strong><Trans id={"market__name"}>Name:</Trans> </strong>{orderInfo?.name}</p>
+                        <p><strong><Trans id={"market__weight"}>Weight:</Trans> </strong>{orderInfo?.weight}</p>
+                        <p><strong><Trans id={"market__pages"}>Pages:</Trans> </strong>{orderInfo?.pages}</p>
+                        <p><strong><Trans id={"market__status"}>Status:</Trans> </strong>{orderInfo?.status}</p>
+                        <p><strong><Trans id={"market__postomat"}>Postomat:</Trans> </strong>{orderInfo?.postomat}</p>
+                        <p><strong><Trans id={"market__dep-date"}>Departure date:</Trans> </strong>{moment(orderInfo?.departuredate).format("L")}</p>
+                        <p><strong><Trans id={"market__arr-date"}>Arrival date:</Trans> </strong>{moment(orderInfo?.arrivaldate).format("L")}</p>
                     </div>
                 </div>
             </section>

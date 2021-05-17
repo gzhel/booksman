@@ -3,12 +3,16 @@ import BooksmanLogo from "../../assets/images/booksman_logo.png";
 import {connect} from "react-redux";
 import {LinkRouter} from "../../components/link-router";
 import {useHistory} from "react-router";
+import {configActions} from "../../utils/config/store/actions";
+import {Trans} from "@lingui/macro";
 
 const mapStateToProps = () => ({});
 
-const mapDispatchToProps = () => ({});
+const mapDispatchToProps = (dispatch) => ({
+    languageChange: (language) => dispatch(configActions.languageChange(language)),
+});
 
-const ConnectedLayout = ({children, path}) => {
+const ConnectedLayout = ({children, path, languageChange}) => {
 
     const history = useHistory();
 
@@ -22,17 +26,17 @@ const ConnectedLayout = ({children, path}) => {
             <header className={"layout__header"}>
                 <div className={"layout__header--menu"}>
                     <button className={"components__button--language-ru"}
-                            onClick={() => console.log("Switch to Russian")}>
+                            onClick={() => languageChange('ru')}>
                         Русский
                     </button>
                     <button className={"components__button--language-en"}
-                            onClick={() => console.log("Switch to English")}>
+                            onClick={() => languageChange('en')}>
                         English
                     </button>
                     <button className={"components__button--reset"}
                             type={"button"}
                             onClick={onLogoutClicked}>
-                        Logout
+                        <Trans id={"layout__logout"}>Logout</Trans>
                     </button>
                 </div>
 
@@ -46,30 +50,23 @@ const ConnectedLayout = ({children, path}) => {
                         <LinkRouter to={"/profile"}
                                     path={path}
                                     icon={"profile"}>
-                            Profile
+                            <Trans id={"layout__profile"}>Profile</Trans>
                         </LinkRouter>
                     </li>
                     <li>
                         <LinkRouter to={"/market"}
                                     path={path}
                                     icon={"market"}>
-                            Market
+                            <Trans id={"layout__market"}>Market</Trans>
                         </LinkRouter>
                     </li>
                     <li>
                         <LinkRouter to={"/orders"}
                                     path={path}
                                     icon={"orders"}>
-                            Orders
+                            <Trans id={"layout__orders"}>Orders</Trans>
                         </LinkRouter>
                     </li>
-                    {/*<li>
-                        <LinkRouter to={"/chat"}
-                                    path={path}
-                                    icon={"chat"}>
-                            Chat
-                        </LinkRouter>
-                    </li>*/}
                 </ul>
             </nav>
             <div className={"layout__page"}>

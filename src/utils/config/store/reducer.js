@@ -27,6 +27,15 @@ export const configReducer = (state = configStateInitial, action) => {
             }
         }
 
+        case ConfigActionTypes.LANGUAGE_CHANGE: {
+            const language = action.payload;
+
+            return {
+                ...state,
+                language: language,
+            }
+        }
+
         default: {
             return state;
         }

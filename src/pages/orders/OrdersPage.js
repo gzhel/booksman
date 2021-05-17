@@ -4,6 +4,7 @@ import {configSelectors} from "../../utils/config/store/selectors";
 import {ordersActions} from "./store/actions";
 import {ordersSelectors} from "./store/selectors";
 import {Link} from "react-router-dom";
+import {Trans} from "@lingui/macro";
 
 const mapStateToProps = (root) => ({
     isShowPreloader: configSelectors.isShowPreloader(root),
@@ -35,7 +36,7 @@ const ConnectedOrdersPage = ({isShowPreloader, ordersList, getOrdersData}) => {
                         <Link to={`/orders/order/${order?.id}`}
                               onClick={() => localStorage.setItem("booksmanOrdersBookId", order?.id)}>
                             <button className={"components__button--minimized"}>
-                                Detail info
+                                <Trans id={"market__detail-info"}>Detail info</Trans>
                             </button>
                         </Link>
                     </div>
@@ -43,7 +44,7 @@ const ConnectedOrdersPage = ({isShowPreloader, ordersList, getOrdersData}) => {
             </section>
             <button className={"market__button components__button--default"}
                     onClick={() => setPagesIndex(pagesIndex + 10)}>
-                Load more
+                <Trans id={"market__load-more"}>Load more</Trans>
             </button>
         </div>
     )

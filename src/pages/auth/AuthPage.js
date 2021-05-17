@@ -6,6 +6,7 @@ import {authActions} from "./store/actions";
 import {authSelectors} from "./store/selectors";
 import {configSelectors} from "../../utils/config/store/selectors";
 import {configActions} from "../../utils/config/store/actions";
+import {Trans} from "@lingui/macro";
 
 const mapStateToProps = (root) => ({
     isAuthorized: configSelectors.isAuthorized(root),
@@ -19,6 +20,7 @@ const mapDispatchToProps = (dispatch) => ({
     onAuthClicked: (authData) => dispatch(authActions.onAuthClicked(authData)),
     onInputChanged: (event) => dispatch(authActions.onInputChanged(event)),
     showErrors: (errors) => dispatch(configActions.showErrors(errors)),
+    languageChange: (language) => dispatch(configActions.languageChange(language)),
 });
 
 const ConnectedAuthPage = ({
@@ -30,6 +32,7 @@ const ConnectedAuthPage = ({
     isShowPreloader,
     isShowErrors,
     showErrors,
+    languageChange,
 }) => {
 
     useEffect(() => {
@@ -42,11 +45,11 @@ const ConnectedAuthPage = ({
         <div className={"auth-page"} style={isShowPreloader ? {filter: "blur(5px)"} : {filter: "none"}}>
             <header className={"auth-page__header"}>
                 <button className={"components__button--language-ru"}
-                        onClick={() => console.log("Switch to Russian")}>
+                        onClick={() => languageChange('ru')}>
                     Русский
                 </button>
                 <button className={"components__button--language-en"}
-                        onClick={() => console.log("Switch to English")}>
+                        onClick={() => languageChange('en')}>
                     English
                 </button>
             </header>
@@ -60,7 +63,7 @@ const ConnectedAuthPage = ({
                 <div className={"auth-page__content--field"}>
                     <label className={"label"}
                            htmlFor={"login"}>
-                        Login:
+                        <Trans id={"auth-page__login"}>Login:</Trans>
                     </label>
                     <input className={"input"}
                            type={"email"}
@@ -73,7 +76,7 @@ const ConnectedAuthPage = ({
                 <div className={"auth-page__content--field"}>
                     <label className={"label"}
                            htmlFor={"password"}>
-                        Password:
+                        <Trans id={"auth-page__password"}>Password:</Trans>
                     </label>
                     <input className={"input"}
                            type={"password"}
@@ -87,18 +90,20 @@ const ConnectedAuthPage = ({
                     <button className={"components__button--default"}
                             type={"button"}
                             onClick={() => onAuthClicked({login, password, history})}>
-                        Sign in
+                        <Trans id={"auth-page__sign-in"}>Sign in</Trans>
                     </button>
                 </div>
                 {isShowErrors &&
                     <label style={{color: "red", margin: "0 auto -30px auto",}}>
-                        Not all fields are filled in!
+                        <Trans id={"auth-page__error"}>
+                            Not all fields are filled in!
+                        </Trans>
                     </label>
                 }
             </section>
             <footer className={"auth-page__footer"}>
                 <p className={"auth-page__footer--copyright"}>
-                    © 2021 Gregory Zhelyabin.
+                    <Trans id={"auth-page__gregory-zhelyabin"}>© 2021 Gregory Zhelyabin.</Trans>
                 </p>
             </footer>
         </div>

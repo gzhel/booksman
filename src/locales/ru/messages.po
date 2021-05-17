@@ -12,3 +12,136 @@ msgstr ""
 "Last-Translator: \n"
 "Language-Team: \n"
 "Plural-Forms: \n"
+
+#: src/pages/auth/AuthPage.js:98
+msgid "auth-page__error"
+msgstr "Не все поля заполнены!"
+
+#: src/pages/auth/AuthPage.js:106
+msgid "auth-page__gregory-zhelyabin"
+msgstr "© 2021 Григорий Желябин."
+
+#: src/pages/auth/AuthPage.js:66
+msgid "auth-page__login"
+msgstr "Логин:"
+
+#: src/pages/auth/AuthPage.js:79
+msgid "auth-page__password"
+msgstr "Пароль:"
+
+#: src/pages/auth/AuthPage.js:93
+msgid "auth-page__sign-in"
+msgstr "Войти"
+
+#: src/bootstrap/layout/Layout.js:39
+msgid "layout__logout"
+msgstr "Выйти"
+
+#: src/bootstrap/layout/Layout.js:60
+msgid "layout__market"
+msgstr "Магазин"
+
+#: src/bootstrap/layout/Layout.js:67
+msgid "layout__orders"
+msgstr "Заказы"
+
+#: src/bootstrap/layout/Layout.js:53
+msgid "layout__profile"
+msgstr "Профиль"
+
+#: src/pages/orders/order/OrdersOrderPage.js:39
+msgid "market__arr-date"
+msgstr "Дата прибытия:"
+
+#: src/pages/market/book/MarketBookPage.js:54
+msgid "market__buy"
+msgstr "Купить"
+
+#: src/pages/market/book/modals/BuyModal.js:54
+msgid "market__buy-now"
+msgstr "Купить сейчас"
+
+#: src/pages/orders/order/OrdersOrderPage.js:38
+msgid "market__dep-date"
+msgstr "Дата отправки:"
+
+#: src/pages/market/book/MarketBookPage.js:50
+msgid "market__description"
+msgstr "Описание:"
+
+#: src/pages/market/MarketPage.js:44
+#: src/pages/orders/OrdersPage.js:39
+msgid "market__detail-info"
+msgstr "Подробнее"
+
+#: src/pages/market/book/modals/BuyFailedModal.js:18
+msgid "market__failed"
+msgstr "У вас недостаточно средств!"
+
+#: src/pages/market/MarketPage.js:53
+#: src/pages/orders/OrdersPage.js:47
+msgid "market__load-more"
+msgstr "Загрузить ещё"
+
+#: src/pages/market/book/MarketBookPage.js:46
+#: src/pages/market/book/modals/BuyModal.js:39
+#: src/pages/orders/order/OrdersOrderPage.js:33
+msgid "market__name"
+msgstr "Название:"
+
+#: src/pages/market/book/MarketBookPage.js:48
+#: src/pages/orders/order/OrdersOrderPage.js:35
+msgid "market__pages"
+msgstr "Страницы:"
+
+#: src/pages/market/book/modals/BuyModal.js:43
+#: src/pages/orders/order/OrdersOrderPage.js:37
+msgid "market__postomat"
+msgstr "Постомат:"
+
+#: src/pages/market/book/MarketBookPage.js:49
+#: src/pages/market/book/modals/BuyModal.js:40
+msgid "market__price"
+msgstr "Цена:"
+
+#: src/pages/orders/order/OrdersOrderPage.js:36
+msgid "market__status"
+msgstr "Статус доставки:"
+
+#: src/pages/market/book/modals/BuySuccessModal.js:18
+msgid "market__success"
+msgstr "Ваша покупка была успешной!"
+
+#: src/pages/market/book/MarketBookPage.js:47
+#: src/pages/orders/order/OrdersOrderPage.js:34
+msgid "market__weight"
+msgstr "Вес:"
+
+#: src/pages/market/book/modals/BuyModal.js:41
+msgid "market__your-cash"
+msgstr "Ваши средства:"
+
+#: src/pages/profile/ProfilePage.js:52
+#: src/pages/profile/add-cash-modal/AddCashModal.js:26
+msgid "profile__add-cash"
+msgstr "Пополнить счёт"
+
+#: src/pages/profile/ProfilePage.js:46
+msgid "profile__age"
+msgstr "Возраст:"
+
+#: src/pages/profile/ProfilePage.js:48
+msgid "profile__cash"
+msgstr "Средства:"
+
+#: src/pages/profile/ProfilePage.js:44
+msgid "profile__first-name"
+msgstr "Имя:"
+
+#: src/pages/profile/ProfilePage.js:45
+msgid "profile__last-name"
+msgstr "Фамилия:"
+
+#: src/pages/profile/ProfilePage.js:59
+msgid "profile__your-orders"
+msgstr "Ваши заказы:"

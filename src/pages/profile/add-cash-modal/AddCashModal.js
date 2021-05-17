@@ -1,7 +1,8 @@
 import {connect} from "react-redux";
 import {Modal} from "../../../utils/modal/Modal";
 import {profileActions} from "../store/actions";
-import {useState} from "react";
+import React, {useState} from "react";
+import {Trans} from "@lingui/macro";
 
 const mapStateToProps = () => ({});
 
@@ -22,7 +23,7 @@ const ConnectedAddCashModal = ({onClose, addCash}) => {
                        onChange={(event) => setCashValue(event.target.value)}
                 />
                 <button className={"components__button--default"} onClick={() => addCash(cashValue)}>
-                    Add cash
+                    <Trans id={"profile__add-cash"}>Add cash</Trans>
                 </button>
             </div>
         </Modal>
