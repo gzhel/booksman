@@ -31,7 +31,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "add-locale": "lingui add-locale",
+    "extract": "lingui extract",
+    "compile": "lingui compile"
   },
   "eslintConfig": {
     "extends": [
@@ -52,8 +55,16 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.14.2",
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.42",
+    "@babel/polyfill": "^7.0.0-beta.42",
+    "@babel/preset-env": "^7.0.0-beta.42",
+    "@babel/preset-stage-0": "^7.0.0-beta.42",
+    "@babel/register": "^7.0.0-beta.42",
+    "@babel/runtime": "^7.0.0-beta.42",
     "@lingui/cli": "^2.9.1",
-    "@lingui/macro": "^2.9.1"
+    "@lingui/macro": "^2.9.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-plugin-transform-object-assign": "^6.22.0"
   }
 }
