@@ -2,7 +2,7 @@ import {publicApi} from "../../utils/api";
 
 class MarketPageApiService {
     getBooksList() {
-        return publicApi.get(`/books/separated?from=100&to=123`);
+        return publicApi.get(`/books/separated?from=100&to=133`);
     }
 
     getBookInfo(bookId) {
