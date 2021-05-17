@@ -11,10 +11,10 @@ export const Modal = ({disabled, onCancel = null, children}) => {
                         <div className={"modals__zoom"}>
                             {onCancel && (
                                 <div className={"modals__close"}>
-                                    <button className={"components__button--default"}
+                                    <button className={"components__button--close"}
                                             disabled={disabled}
                                             onClick={onCancel}>
-                                        X
+                                        ×
                                     </button>
                                 </div>
                             )}

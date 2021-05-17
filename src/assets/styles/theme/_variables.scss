@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-$primary-font: 'Merriweather', serif;
+$primary-font: 'Montserrat', serif;
 
 $primary-color: #d5ac78; // background etc
 $primary-color-dark: darken($primary-color, 50%);

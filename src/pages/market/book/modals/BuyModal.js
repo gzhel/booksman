@@ -18,9 +18,14 @@ const mapDispatchToProps = (dispatch) => ({
 
 const ConnectedBuyModal = ({onClose, bookInfo, userInfo, onBuyButtonClicked}) => {
 
-    const [postId, setPostId] = useState(-1);
+    const [postId, setPostId] = useState(0);
     const handleChange = (postId) => setPostId(postId);
-    const options = [{id: 1, label: 'Постомат 1'}, {id: 2, label: 'Постомат 2'}, {id: 3, label: 'Постомат 3'}, {id: 4, label: 'Постомат 4'},];
+    const options = [
+        {id: 1, label: 'ТЦ Юбилейный, Платановый бульвар, 3, 1 этаж'},
+        {id: 2, label: 'Гаврилова ул., д. 105'},
+        {id: 3, label: '1-го Мая ул., д. 270'},
+        {id: 4, label: 'ТЦ BOSS-HOUSE, Атарбекова ул., д. 1/1'},
+    ];
 
     return (
         <Modal onCancel={onClose}>
@@ -44,7 +49,7 @@ const ConnectedBuyModal = ({onClose, bookInfo, userInfo, onBuyButtonClicked}) =>
             <div className={"market__buy-modal--button"}>
                 <button className={"components__button--default"}
                         onClick={() => onBuyButtonClicked({bookId: bookInfo?.id, postId: postId?.id})}
-                        disabled={(bookInfo?.price > userInfo?.cash)}>
+                        disabled={(bookInfo?.price > userInfo?.cash) || !postId}>
                     Buy now
                 </button>
             </div>

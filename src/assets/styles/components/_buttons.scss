@@ -20,6 +20,25 @@
     }
   }
 
+  &--close {
+    color: $black;
+    padding: 0 10px;
+    background-color: transparent;
+    border: 2px solid transparent;
+    font-size: 40px;
+    font-weight: 600;
+
+    &:hover {
+      cursor: pointer;
+      color: lighten($black, 5);
+    }
+
+    &:disabled {
+      background-color: transparent;
+      color: gray;
+    }
+  }
+
   &--minimized {
     color: $black;
     padding: 4px 15px;
@@ -51,6 +70,47 @@
 
   &--language-ru {
     color: $white;
+    text-shadow:
+            -0   -4px 0   #000000,
+            0   -4px 0   #000000,
+            -0    4px 0   #000000,
+            0    4px 0   #000000,
+            -4px -0   0   #000000,
+            4px -0   0   #000000,
+            -4px  0   0   #000000,
+            4px  0   0   #000000,
+            -1px -4px 0   #000000,
+            1px -4px 0   #000000,
+            -1px  4px 0   #000000,
+            1px  4px 0   #000000,
+            -4px -1px 0   #000000,
+            4px -1px 0   #000000,
+            -4px  1px 0   #000000,
+            4px  1px 0   #000000,
+            -2px -4px 0   #000000,
+            2px -4px 0   #000000,
+            -2px  4px 0   #000000,
+            2px  4px 0   #000000,
+            -4px -2px 0   #000000,
+            4px -2px 0   #000000,
+            -4px  2px 0   #000000,
+            4px  2px 0   #000000,
+            -3px -4px 0   #000000,
+            3px -4px 0   #000000,
+            -3px  4px 0   #000000,
+            3px  4px 0   #000000,
+            -4px -3px 0   #000000,
+            4px -3px 0   #000000,
+            -4px  3px 0   #000000,
+            4px  3px 0   #000000,
+            -4px -4px 0   #000000,
+            4px -4px 0   #000000,
+            -4px  4px 0   #000000,
+            4px  4px 0   #000000,
+            -4px -4px 0   #000000,
+            4px -4px 0   #000000,
+            -4px  4px 0   #000000,
+            4px  4px 0   #000000;
     padding: 8px 30px;
     background: url("../../images/ru.svg");
     background-size: contain;
@@ -65,6 +125,47 @@
 
   &--language-en {
     color: $white;
+    text-shadow:
+            -0   -4px 0   #000000,
+            0   -4px 0   #000000,
+            -0    4px 0   #000000,
+            0    4px 0   #000000,
+            -4px -0   0   #000000,
+            4px -0   0   #000000,
+            -4px  0   0   #000000,
+            4px  0   0   #000000,
+            -1px -4px 0   #000000,
+            1px -4px 0   #000000,
+            -1px  4px 0   #000000,
+            1px  4px 0   #000000,
+            -4px -1px 0   #000000,
+            4px -1px 0   #000000,
+            -4px  1px 0   #000000,
+            4px  1px 0   #000000,
+            -2px -4px 0   #000000,
+            2px -4px 0   #000000,
+            -2px  4px 0   #000000,
+            2px  4px 0   #000000,
+            -4px -2px 0   #000000,
+            4px -2px 0   #000000,
+            -4px  2px 0   #000000,
+            4px  2px 0   #000000,
+            -3px -4px 0   #000000,
+            3px -4px 0   #000000,
+            -3px  4px 0   #000000,
+            3px  4px 0   #000000,
+            -4px -3px 0   #000000,
+            4px -3px 0   #000000,
+            -4px  3px 0   #000000,
+            4px  3px 0   #000000,
+            -4px -4px 0   #000000,
+            4px -4px 0   #000000,
+            -4px  4px 0   #000000,
+            4px  4px 0   #000000,
+            -4px -4px 0   #000000,
+            4px -4px 0   #000000,
+            -4px  4px 0   #000000,
+            4px  4px 0   #000000;
     padding: 8px 30px;
     background: url("../../images/gb.svg");
     background-size: contain;
