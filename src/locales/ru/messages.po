@@ -66,6 +66,7 @@ msgid "market__dep-date"
 msgstr "Дата отправки:"
 
 #: src/pages/market/book/MarketBookPage.js:50
+#: src/pages/profile/order/ProfileOrderPage.js:33
 msgid "market__description"
 msgstr "Описание:"
 
@@ -86,11 +87,13 @@ msgstr "Загрузить ещё"
 #: src/pages/market/book/MarketBookPage.js:46
 #: src/pages/market/book/modals/BuyModal.js:39
 #: src/pages/orders/order/OrdersOrderPage.js:33
+#: src/pages/profile/order/ProfileOrderPage.js:29
 msgid "market__name"
 msgstr "Название:"
 
 #: src/pages/market/book/MarketBookPage.js:48
 #: src/pages/orders/order/OrdersOrderPage.js:35
+#: src/pages/profile/order/ProfileOrderPage.js:30
 msgid "market__pages"
 msgstr "Страницы:"
 
@@ -101,6 +104,7 @@ msgstr "Постомат:"
 
 #: src/pages/market/book/MarketBookPage.js:49
 #: src/pages/market/book/modals/BuyModal.js:40
+#: src/pages/profile/order/ProfileOrderPage.js:32
 msgid "market__price"
 msgstr "Цена:"
 
@@ -114,6 +118,7 @@ msgstr "Ваша покупка была успешной!"
 
 #: src/pages/market/book/MarketBookPage.js:47
 #: src/pages/orders/order/OrdersOrderPage.js:34
+#: src/pages/profile/order/ProfileOrderPage.js:31
 msgid "market__weight"
 msgstr "Вес:"
 

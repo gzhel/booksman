@@ -2,6 +2,7 @@ import {connect} from "react-redux";
 import React, {useEffect} from "react";
 import {profileActions} from "../store/actions";
 import {profileSelectors} from "../store/selectors";
+import {Trans} from "@lingui/macro";
 
 const mapStateToProps = (root) => ({
     orderInfo: profileSelectors.orderInfo(root),
@@ -25,11 +26,11 @@ const ConnectedProfileOrderPage = ({getProfileOrder, orderInfo, orderComments}) 
                      width={244}
                      height={398}/>
                 <div className={"profile__order--info"}>
-                    <p><strong>Name: </strong>{orderInfo?.name}</p>
-                    <p><strong>Pages: </strong>{orderInfo?.pages}</p>
-                    <p><strong>Weight: </strong>{orderInfo?.weight}</p>
-                    <p><strong>Price: </strong>{orderInfo?.price} ₽</p>
-                    <p><strong>Description: </strong>{orderInfo?.discription}</p>
+                    <p><strong><Trans id={"market__name"}>Name:</Trans> </strong>{orderInfo?.name}</p>
+                    <p><strong><Trans id={"market__pages"}>Pages:</Trans> </strong>{orderInfo?.pages}</p>
+                    <p><strong><Trans id={"market__weight"}>Weight:</Trans> </strong>{orderInfo?.weight}</p>
+                    <p><strong><Trans id={"market__price"}>Price:</Trans> </strong>{orderInfo?.price} ₽</p>
+                    <p><strong><Trans id={"market__description"}>Description:</Trans> </strong>{orderInfo?.discription}</p>
                 </div>
             </section>
             <section className={"components__card mb-md"}>

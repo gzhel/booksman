@@ -66,6 +66,7 @@ msgid "market__dep-date"
 msgstr "Departure date:"
 
 #: src/pages/market/book/MarketBookPage.js:50
+#: src/pages/profile/order/ProfileOrderPage.js:33
 msgid "market__description"
 msgstr "Description:"
 
@@ -86,11 +87,13 @@ msgstr "Load more"
 #: src/pages/market/book/MarketBookPage.js:46
 #: src/pages/market/book/modals/BuyModal.js:39
 #: src/pages/orders/order/OrdersOrderPage.js:33
+#: src/pages/profile/order/ProfileOrderPage.js:29
 msgid "market__name"
 msgstr "Name:"
 
 #: src/pages/market/book/MarketBookPage.js:48
 #: src/pages/orders/order/OrdersOrderPage.js:35
+#: src/pages/profile/order/ProfileOrderPage.js:30
 msgid "market__pages"
 msgstr "Pages:"
 
@@ -101,6 +104,7 @@ msgstr "Postomat:"
 
 #: src/pages/market/book/MarketBookPage.js:49
 #: src/pages/market/book/modals/BuyModal.js:40
+#: src/pages/profile/order/ProfileOrderPage.js:32
 msgid "market__price"
 msgstr "Price:"
 
@@ -114,6 +118,7 @@ msgstr "Your purchase was successful!"
 
 #: src/pages/market/book/MarketBookPage.js:47
 #: src/pages/orders/order/OrdersOrderPage.js:34
+#: src/pages/profile/order/ProfileOrderPage.js:31
 msgid "market__weight"
 msgstr "Weight:"
 
