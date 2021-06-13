@@ -125,6 +125,7 @@
 
   &--language-en {
     color: $white;
+    // background: url("../../images/gb.svg");
     text-shadow:
             -0   -4px 0   #000000,
             0   -4px 0   #000000,
@@ -167,7 +168,6 @@
             -4px  4px 0   #000000,
             4px  4px 0   #000000;
     padding: 8px 30px;
-    background: url("../../images/gb.svg");
     background-size: contain;
     border-radius: 20px;
     font-weight: 600;
