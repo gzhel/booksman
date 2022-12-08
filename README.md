@@ -1,1 +1,1 @@
-# Booksman App
+# Booksman App (Graduation Project at the University)
